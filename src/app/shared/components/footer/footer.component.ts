@@ -11,7 +11,6 @@ import { Component } from '@angular/core';
             <a href="jlassyesra6@email.com" target="_blank" rel="noopener">
               <img src="assets/images/emails.png" alt="Email" class="icon" />
             </a>
-            
             <a
               href="https://www.linkedin.com/in/jlassi-isra/"
               target="_blank"
