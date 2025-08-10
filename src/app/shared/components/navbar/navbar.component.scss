@@ -1,0 +1,105 @@
+$accent: #ad6a97; // deep mauve
+$bg: #f0d9f3; // light lavender
+$text: #ffffff;
+
+.site-header {
+  // premium translucent look
+  background: linear-gradient(180deg, rgba($accent, 0.95), rgba($accent, 0.9));
+  color: $text;
+  padding: 14px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    0 10px 30px -12px rgba($accent, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  backdrop-filter: saturate(1.1) blur(6px);
+  -webkit-backdrop-filter: saturate(1.1) blur(6px);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.nav-list a {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: lowercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.2px;
+  padding: 6px 2px;
+  transition:
+    color 220ms ease,
+    transform 220ms ease,
+    opacity 220ms ease;
+
+  // elegant gradient underline that grows on hover
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), #fff, rgba(255, 255, 255, 0.2));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: scaleX(1);
+  }
+
+  // accessible focus ring
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 3px rgba(255, 255, 255, 0.22),
+      0 4px 18px -8px rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+  }
+
+  // active route style
+  &.active {
+    color: #fff;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+// Respect reduced motion preferences
+@media (prefers-reduced-motion: reduce) {
+  .nav-list a {
+    transition: color 0.01ms linear;
+    transform: none !important;
+
+    &::after {
+      transition: none;
+    }
+  }
+}

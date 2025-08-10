@@ -1,0 +1,37 @@
+$accent: #AD6A97;
+$bg: #f0d0f0;
+
+.icons {
+  display: flex;
+  gap: 10px;
+  align-items: center; // ✅ keeps all icons centered on the same line
+
+  .icon {
+    width: 30px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Behance slightly larger but still vertically centered */
+  .icon[alt="Behance"] {
+    width: 35px;
+    height: 35px;
+  }
+  .icon[alt="Instagram"] {
+    // margin-left: -2px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+
+.site-footer{background:$accent;color:white;padding:34px 0;border-radius:10px}
+.container{max-width:1100px;margin:0 auto;padding:0 20px;text-align:center}
+.icons{display:flex;gap:12px;justify-content:center;margin-bottom:12px}
+.pill{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.15)}
+.kofi{display:inline-block;margin-top:6px;padding:8px 12px;border-radius:20px;background:#fff;color:$accent;font-weight:700}
