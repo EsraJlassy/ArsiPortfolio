@@ -3,17 +3,20 @@ name: Deploy Angular app to GitHub Pages
 on:
   push:
     branches:
-      - main   # Trigger on push to main branch
+      - main
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # fetch all history for gh-pages deploy
+          fetch-depth: 0
+          persist-credentials: true
 
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -21,11 +24,10 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build Angular app
-        run: |
-          npm run ng -- build --configuration production --output-path=dist/browser --base-href "/ArsiPortfolio/"
+        run: npm run ng -- build --configuration production --output-path=dist/browser --base-href "/ArsiPortfolio/"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -33,5 +35,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/browser
           publish_branch: gh-pages
-          user_name: 'github-actions'
-          user_email: 'github-actions@github.com'
