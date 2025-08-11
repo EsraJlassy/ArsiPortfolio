@@ -18,7 +18,7 @@ export class ContactComponent {
     message: ['', Validators.required],
   });
 
-  email = 'jlassyesra6@gmail.com';
+  email = 'jj.arsi.designs@gmail.com';
   // Replace with your real phone; display-friendly for UI, sanitized for tel: href
   phone = '+216 50 691 976';
 
