@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Oa as o,Pa as r,W as n,Ya as i,ab as a}from"./chunk-QEYLR2PN.mjs";import"./chunk-VVCT4QZE.mjs";var l=(()=>{class e{static{this.\u0275fac=function(t){return new(t||e)}}static{this.\u0275cmp=n({type:e,selectors:[["app-artwork"]],standalone:!0,features:[a],decls:2,vars:0,template:function(t,s){t&1&&(o(0,"p"),i(1,"We still working on the web site !"),r())}})}}return e})();export{l as ArtworkComponent};
