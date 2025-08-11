@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
             >
               <img
                 src="assets/images/linkdin.png"
-                alt="LinkedIn"
+                alt="LinkedIn"git checkout gh-pages
                 class="icon"
               />
             </a>
